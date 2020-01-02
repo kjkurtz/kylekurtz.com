@@ -1,19 +1,19 @@
-import React from "react";
-import Helmet from "react-helmet";
-import config from "../../data/SiteConfig";
-import Header from '../components/Header';
-import "./index.css";
+import React from 'react';
+import Helmet from 'react-helmet';
+import config from '../../data/SiteConfig';
+import Sidebar from '../components/Sidebar';
+import './index.css';
 
 export default class MainLayout extends React.Component {
   render() {
     const { children } = this.props;
     return (
-      <div className="py-8 lg:py-16 px-6 md:px-16 lg:px-24">
+      <div className="flex max-w-5xl mx-auto">
         <Helmet>
           <meta name="description" content={config.siteDescription} />
           <html lang="en" />
         </Helmet>
-        <Header />
+        <Sidebar />
         {children}
       </div>
     );
